@@ -6,21 +6,6 @@ git status
 git stash
 git pull
 
-Open Android Studio
-VCS -> git -> Unstash Changes
-Apply Stash
-Click on a file, click the revert button, then mark each checkbox
-Apply
-DON'T RELOAD PROJECT
-VCS -> git -> Unstash Changes
-Apply Stash
-
-If there's the option of accepting your changes/their changes, review
-them and see which ones are most up to date, and if there's any
-conflicts. You can choose what to merge into the new file by clicking
-"X" or ">>" or "<<" to ignore or move certain changes.
-
-RELOAD PROJECT
 
 ************************************************************************
 
