@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'welcome#contact'
   get '/index' => 'geolocs#index'
-
+  get '/graph' => 'graph#graph'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,9 @@
+README.doc
+
+Hey Kyle, 
+
+For the graph you're going to have to call on a few tables in our database -- Unless the graph uses static data. 
+I didn't create the schema or generate the resources/scaffolding for the graph folder because of this.
+
+If the d3 graph does use static data, go ahead and add your files to the graph.html.erb found the the graph folder.
+
