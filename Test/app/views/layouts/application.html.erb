@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+  	<%= Gon::Base.render_data %>
+  	<script src="/assets/modernizr.js"></script> <!-- Modernizr -->
+  	<script src="/assets/jquery-2.1.4.js"></script>
+	<script src="/assets/velocity.min.js"></script>
+	<script src="/assets/main.js"></script> <!-- Resource jQuery -->
+</head>
+<body>
+	
+
+	<ul>
+		<li>
+			<div class= "tess" >
+				<%= link_to root_path, data: {menu: "home"} do %>
+					<%= image_tag "home.svg" %>
+				<% end %>
+			</div>
+		</li>	
+					
+		<li>
+			<div class= "tess" >
+				<%= link_to contact_path, data: {menu: "contact"} do %>
+					<%= image_tag "contact.svg" %>
+				<% end %>
+			</div>
+		</li>
+
+		<li>
+			<div class= "tess" >
+				<%= link_to geolocs_path, data: {menu: "index"} do %>
+					<%= image_tag "map.svg" %>
+				<% end %>
+			</div>
+		</li>
+	</ul>
+
+
+<%= yield %>
+
+
+</body>
+</html>
