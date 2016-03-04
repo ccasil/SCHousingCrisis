@@ -13,42 +13,42 @@
 </head>
 <body>
 	
-
+<nav class="cd-side-navigation">
 	<ul>
-		<li>
-			<div class= "tess" >
-				<%= link_to root_path, data: {menu: "home"} do %>
+		<li class="<%= 'selected' if current_page?(root_path) %>">
+	
+				<%= link_to root_path, data: {menu: "/welcome/home"} do %>
 					<%= image_tag "home.svg" %>
 				<% end %>
-			</div>
+
 		</li>	
 					
-		<li>
-			<div class= "tess" >
+		<li class="<%= 'selected' if current_page?(contact_path) %>">
+		
 				<%= link_to contact_path, data: {menu: "contact"} do %>
 					<%= image_tag "contact.svg" %>
 				<% end %>
-			</div>
+
 		</li>
 
-		<li>
-			<div class= "tess" >
-				<%= link_to geolocs_path, data: {menu: "index"} do %>
+		<li class="<%= 'selected' if current_page?(geolocs_path) %>">
+		
+				<%= link_to geolocs_path, data: {menu: "geolocs"} do %>
 					<%= image_tag "map.svg" %>
 				<% end %>
-			</div>
+
 		</li>
 
-		<li>
-			<div class= "tess" >
+		<li class="<%= 'selected' if current_page?(graph_path) %>">
+
 				<%= link_to graph_path, data: {menu: "graph"} do %>
 					<%= image_tag "map.svg" %>
 				<% end %>
-			</div>
+
 		</li>
 	
 	</ul>
-
+</nav>
 
 <%= yield %>
 

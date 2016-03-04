@@ -23,8 +23,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+#ruby variables to js args
 gem 'gon'
 gem 'rabl'
+
+gem 'gmaps4rails'
+
+#NavLYNX provides a nav_link_to helper that works just like the standard Rails link_to helper, but adds a selected class to your link (or its wrapper) if certain criteria are met.
+gem 'nav_lynx'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

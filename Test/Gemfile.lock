@@ -54,6 +54,7 @@ GEM
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     gon (6.0.1)
       actionpack (>= 3.0)
       json
@@ -76,6 +77,8 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    nav_lynx (1.1.1)
+      rails (>= 3.1.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     rabl (0.12.0)
@@ -152,9 +155,11 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  gmaps4rails
   gon
   jbuilder (~> 2.0)
   jquery-rails
+  nav_lynx
   rabl
   rails (= 4.2.5.1)
   sass-rails (~> 5.0)
