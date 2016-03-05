@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  resources :geolocs
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
 
   # You can have the root of your site routed with "root"
-  get '/welcome/home'
   root 'welcome#home'
-
+  get '/geolocs', to: 'geolocs#index'
+  get '/welcome', to: 'welcome#home'
   get '/contact', to: 'welcome#contact'
-  get '/index' => 'geolocs#index'
-  get '/graph' => 'graph#graph'
-
+  get '/graph', to: 'graph#graph'
+  resources :geolocs
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

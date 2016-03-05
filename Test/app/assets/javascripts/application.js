@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require main.js
 //= require modernizr.js
 //= require jquery-2.1.4.js
 //= require velocity.min.js
+//= require main.js
+//= require map.js
 //= require_tree .
 //=

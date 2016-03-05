@@ -241,7 +241,7 @@ Navigation
   -ms-transform: translateX(-50%) scale(0);
   -o-transform: translateX(-50%) scale(0);
   transform: translateX(-50%) scale(0);
-  background: url("../image/cd-icon-arrow.svg") no-repeat center center;
+  background: url(class="arrow.svg") no-repeat center center;
 }
 .cd-section.visible {
   /* this is the visible/selected section */
@@ -442,7 +442,7 @@ Navigation
 #cd-loading-bar.contact {
   background-color: #d35657;
 }
-#cd-loading-bar.index {
+#cd-loading-bar.geolocs {
   background-color: #343943;
 }
 #cd-loading-bar.graph {

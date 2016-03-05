@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
 		    */
 	      	var newPageArray = location.pathname.split('/'),
 	        //this is the url of the page to be loaded 
-	        newPage = newPageArray[newPageArray.length - 1].replace('');
+	        newPage = newPageArray[newPageArray.length - 1].replace('.html', '');
 	      	if( !isAnimating ) triggerAnimation(newPage, false);
 	    }
 	    firstLoad = true;
@@ -81,7 +81,7 @@ jQuery(document).ready(function($){
 			//create a new section element and insert it into the DOM
 			var section = $('<section class="cd-section overflow-hidden '+newSection+'"></section>').appendTo(mainContent);
 			//load the new content from the proper html file
-			section.load(newSection' .cd-section > *', function(event){
+			section.load(newSection+'.html .cd-section > *', function(event){
 				//finish up the animation and then make the new section visible
 				var scaleMax = loadingBar.data('scale');
 				
@@ -98,12 +98,12 @@ jQuery(document).ready(function($){
 						resetAfterAnimation(section);
 					}
 
-					var url = newSection;
+					var url = newSection+'.html';
 
 					if(url!=window.location && bool){
 				        //add the new page to the window.history
 				        //if the new page was triggered by a 'popstate' event, don't add it
-				        window.history.pushState({path: newSection},'',newSection);
+				        window.history.pushState({path: url},'',url);
 				    }
 				});
 			});

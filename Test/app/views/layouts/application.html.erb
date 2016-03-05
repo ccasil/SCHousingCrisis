@@ -10,6 +10,7 @@
   	<script src="/assets/jquery-2.1.4.js"></script>
 	<script src="/assets/velocity.min.js"></script>
 	<script src="/assets/main.js"></script> <!-- Resource jQuery -->
+	<script src="/assets/map.js"></script>
 </head>
 <body>
 	
@@ -17,7 +18,7 @@
 	<ul>
 		<li class="<%= 'selected' if current_page?(root_path) %>">
 	
-				<%= link_to root_path, data: {menu: "/welcome/home"} do %>
+				<%= link_to root_path, data: {menu: "welcome"} do %>
 					<%= image_tag "home.svg" %>
 				<% end %>
 
