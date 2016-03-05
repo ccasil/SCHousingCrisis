@@ -1,4 +1,5 @@
-jQuery(document).ready(function($){
+
+$(document).ready(function($){
 	//set some variables
 	var isAnimating = false,
 		firstLoad = false,
@@ -138,3 +139,4 @@ jQuery(document).ready(function($){
 		}, 1);
 	}
 });
+

@@ -1,6 +1,7 @@
       // This example enables Sign In by loading the Maps API with the signed_in
       // parameter set to true. For example:
       // https://maps.googleapis.com/maps/api/js?signed_in=true&amp;callback=initMap
+
 function initMap() {
       var bounds = new google.maps.LatLngBounds();
       var map = new google.maps.Map(document.getElementById('map'),{

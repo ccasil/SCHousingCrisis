@@ -3,7 +3,7 @@ class GeolocsController < ApplicationController
 
   # GET /geolocs
   # GET /geolocs.json
-  def index
+  def geolocs
     @geolocs = Geoloc.all
     gon.rabl
   end

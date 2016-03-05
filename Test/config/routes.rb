@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#home'
-  get '/geolocs', to: 'geolocs#index'
+  get '/geolocs', to: 'geolocs#geolocs'
   get '/welcome', to: 'welcome#home'
   get '/contact', to: 'welcome#contact'
   get '/graph', to: 'graph#graph'
