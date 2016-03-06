@@ -11,10 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+
 //= require jquery_ujs
 //= require modernizr.js
 //= require velocity.min.js
 //= require main.js
 //= require map.js
+//= require turbolinks
 //= require_tree .
