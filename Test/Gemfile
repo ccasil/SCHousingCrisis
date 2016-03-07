@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -31,6 +31,16 @@ gem 'rabl'
 
 gem 'gmaps4rails'
 
+gem 'tzinfo-data'
+gem 'will_paginate', '~>3.0.5'
+
+#Provides support for ruby on linux error messages
+gem 'activesupport', '~>4.2', '>=4.2.5.1'
+
+#Gets javascript stuff working
+gem 'coffee-script-source', '~>1.8.0'
+
+
 #NavLYNX provides a nav_link_to helper that works just like the standard Rails link_to helper, but adds a selected class to your link (or its wrapper) if certain criteria are met.
 gem 'nav_lynx'
 
@@ -54,5 +64,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  gem 'devise'
 end
 
