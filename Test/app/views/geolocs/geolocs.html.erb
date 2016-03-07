@@ -1,65 +1,62 @@
-
-
-  <main class="cd-main">
-    <section class="cd-section geolocs visible">
-      <header>
-        <div class="cd-title">
+<main class="cd-main">
+  <section class="cd-section geolocs visible">
+    <header>
+      <div class="cd-title">
           <h2>Santa Cruz County Map</h2>
-        </div>
-        <div class="cd-scroll"></div>
-      </header>
-    
-    <h1><a href="#" onclick="alert(JSON.stringify(gon.geolocs, null, 4)); return false">Click Here</a></h1>
+      </div>
+      <div class="cd-scroll"></div>
+    </header>
 
 
 
-    <div id="map"></div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMHwtbBTHVo6QqB-SxaSrPfV0aUMEmonk&signed_in=true&callback=initMap">
-    </script>
+      <h1><a href="#" onclick="alert(JSON.stringify(gon.geolocs, null, 4)); return false">Click Here</a></h1>
+      <div id="map"></div>
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMHwtbBTHVo6QqB-SxaSrPfV0aUMEmonk&signed_in=true&callback=initMap">
+      </script>
 
 
-<h1>Listing Geolocs</h1>
+    <h1>Listing Geolocs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zip</th>
-      <th>G lat</th>
-      <th>G lon</th>
-      <th>G side</th>
-      <th>G type</th>
-      <th>G side</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>G lat</th>
+          <th>G lon</th>
+          <th>G side</th>
+          <th>G type</th>
+          <th>G side</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @geolocs.each do |geoloc| %>
-      <tr>
-        <td><%= geoloc.address %></td>
-        <td><%= geoloc.city %></td>
-        <td><%= geoloc.state %></td>
-        <td><%= geoloc.zip %></td>
-        <td><%= geoloc.g_lat %></td>
-        <td><%= geoloc.g_lon %></td>
-        <td><%= geoloc.g_side %></td>
-        <td><%= geoloc.g_type %></td>
-        <td><%= geoloc.g_side %></td>
-        <td><%= link_to 'Show', geoloc %></td>
-        <td><%= link_to 'Edit', edit_geoloc_path(geoloc) %></td>
-        <td><%= link_to 'Destroy', geoloc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @geolocs.each do |geoloc| %>
+          <tr>
+            <td><%= geoloc.address %></td>
+            <td><%= geoloc.city %></td>
+            <td><%= geoloc.state %></td>
+            <td><%= geoloc.zip %></td>
+            <td><%= geoloc.g_lat %></td>
+            <td><%= geoloc.g_lon %></td>
+            <td><%= geoloc.g_side %></td>
+            <td><%= geoloc.g_type %></td>
+            <td><%= geoloc.g_side %></td>
+            <td><%= link_to 'Show', geoloc %></td>
+            <td><%= link_to 'Edit', edit_geoloc_path(geoloc) %></td>
+            <td><%= link_to 'Destroy', geoloc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
+    <br>
 
-<%= link_to 'New Geoloc', new_geoloc_path %>
+    <%= link_to 'New Geoloc', new_geoloc_path %>
 
       </div> <!-- .cd-content -->
     </section> <!-- .cd-section -->

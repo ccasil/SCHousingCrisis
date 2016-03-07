@@ -1,0 +1,42 @@
+<main class="cd-main">
+  <section class="cd-section geolocs visible">
+    <header>
+      <div class="cd-title">
+<h2>
+<h3><strong>Address Information</strong></h3>
+<p>
+  <strong>latitude:</strong>
+  <%= @geoloc.latitude %>
+</p>
+
+<p>
+  <strong>longitude:</strong>
+  <%= @geoloc.longitude %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @geoloc.address %>
+</p>
+
+<p>
+  <strong>city:</strong>
+  <%= @geoloc.city %>
+</p>
+
+<p>
+  <strong>state:</strong>
+  <%= @geoloc.state %>
+</p>
+
+<p>
+  <strong>zip:</strong>
+  <%= @geoloc.zip %>
+</p>
+
+<p>
+<%= link_to 'Edit', edit_geoloc_path(@geoloc) %> |
+<%= link_to 'Back', geolocs_path %>
+</p>
+</h2>
+</div>
