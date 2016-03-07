@@ -4,7 +4,7 @@ class GeolocsController < ApplicationController
   # GET /geolocs
   # GET /geolocs.json
   def geolocs
-    @geolocs = Geoloc.all
+    @geolocs = Geoloc.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
     gon.rabl
   end
 

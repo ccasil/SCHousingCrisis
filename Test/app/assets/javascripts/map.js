@@ -57,7 +57,7 @@ function initMap() {
       });
     }       
 
-          // Define the LatLng coordinates for the polygon.
+      // Define the LatLng coordinates for the polygon.
       var triangleCoords = [
           {lat: 37.002723, lng: -122.072547},
           {lat: 36.977644, lng: -122.069170},
@@ -87,4 +87,26 @@ function initMap() {
       }
 
 
+    /** @this {google.maps.Polygon} */
+    function showArrays(event) {
+      // Since this polygon has only one path, we can call getPath() to return the
+      // MVCArray of LatLngs.
+      var vertices = this.getPath();
 
+      var contentString = '<b>Santa Cruz city limits</b><br>' +
+          'Clicked location: <br>' + event.latLng.lat() + ',' + event.latLng.lng() +
+          '<br>';
+
+      // Iterate over the vertices.
+      for (var i =0; i < vertices.getLength(); i++) {
+        var xy = vertices.getAt(i);
+        contentString += '<br>' + 'Coordinate ' + i + ':<br>' + xy.lat() + ',' +
+            xy.lng();
+      }
+
+      // Replace the info window's content and position.
+      infoWindow.setContent(contentString);
+      infoWindow.setPosition(event.latLng);
+
+      infoWindow.open(map);
+}

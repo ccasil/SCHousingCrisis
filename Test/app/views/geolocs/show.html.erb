@@ -1,49 +1,42 @@
-<p id="notice"><%= notice %></p>
+<main class="cd-main">
+  <section class="cd-section geolocs visible">
+    <header>
+      <div class="cd-title">
+<h2>
+<h3><strong>Address Information</strong></h3>
+<p>
+  <strong>latitude:</strong>
+  <%= @geoloc.latitude %>
+</p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>longitude:</strong>
+  <%= @geoloc.longitude %>
+</p>
+
+<p>
+  <strong>address:</strong>
   <%= @geoloc.address %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong>city:</strong>
   <%= @geoloc.city %>
 </p>
 
 <p>
-  <strong>State:</strong>
+  <strong>state:</strong>
   <%= @geoloc.state %>
 </p>
 
 <p>
-  <strong>Zip:</strong>
+  <strong>zip:</strong>
   <%= @geoloc.zip %>
 </p>
 
 <p>
-  <strong>G lat:</strong>
-  <%= @geoloc.g_lat %>
-</p>
-
-<p>
-  <strong>G lon:</strong>
-  <%= @geoloc.g_lon %>
-</p>
-
-<p>
-  <strong>G side:</strong>
-  <%= @geoloc.g_side %>
-</p>
-
-<p>
-  <strong>G type:</strong>
-  <%= @geoloc.g_type %>
-</p>
-
-<p>
-  <strong>G side:</strong>
-  <%= @geoloc.g_side %>
-</p>
-
 <%= link_to 'Edit', edit_geoloc_path(@geoloc) %> |
 <%= link_to 'Back', geolocs_path %>
+</p>
+</h2>
+</div>

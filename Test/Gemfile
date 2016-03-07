@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,23 +16,28 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-gem 'turbolinks'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-#ruby variables to js args
 gem 'gon'
 gem 'rabl'
 
 gem 'gmaps4rails'
+gem 'geocoder'
 
-#NavLYNX provides a nav_link_to helper that works just like the standard Rails link_to helper, but adds a selected class to your link (or its wrapper) if certain criteria are met.
-gem 'nav_lynx'
+#Disables for windows - search function
+gem 'tzinfo-data'
+gem 'will_paginate', '~>3.0.5'
+
+#Provides support for ruby on linux error messages
+gem 'activesupport', '~>4.2', '>=4.2.5.1'
+
+#Gets javascript stuff working
+gem 'coffee-script-source', '~>1.8.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

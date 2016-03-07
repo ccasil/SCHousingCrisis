@@ -15,7 +15,13 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMHwtbBTHVo6QqB-SxaSrPfV0aUMEmonk&signed_in=true&callback=initMap">
       </script>
 
-
+<%= form_tag geolocs_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= button_tag "Search",:type => 'search', :name => nil %>
+  </p>
+   
+<% end %>
     <h1>Listing Geolocs</h1>
 
     <table>
@@ -53,9 +59,9 @@
         <% end %>
       </tbody>
     </table>
-
     <br>
-
+    <%= will_paginate @geoloc %>
+    <br>
     <%= link_to 'New Geoloc', new_geoloc_path %>
 
       </div> <!-- .cd-content -->
