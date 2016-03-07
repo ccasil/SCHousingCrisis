@@ -3,18 +3,23 @@ Rails.application.routes.draw do
 
   devise_for :users
   
-  resources :users
+  # resources :users
+
+  
   root 'welcome#home'
+
   get '/welcome', to: 'welcome#home'
   get '/contact', to: 'welcome#contact'
   get '/geolocs', to: 'geolocs#geolocs'
   get '/graph', to: 'graph#graph'
   get  '/devise/registrations', to: 'devise/registrations#new'
   get '/devise/sessions', to: 'devise/sessions#new'
-  
-  #devise_scope :users do
-	#get '/users/sign_out' => 'devise/sessions#destroy'
-  #end
+
+  devise_scope :user do
+	get '/users/sign_out', to: 'devise/sessions#destroy'
+	get '/users/sign_out', to: 'users/sessions#destroy'
+  end
+
   resources :geolocs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
