@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -32,6 +32,12 @@ gem 'geocoder'
 #Disables for windows - search function
 gem 'tzinfo-data'
 gem 'will_paginate', '~>3.0.5'
+
+#Provides support for ruby on linux error messages
+gem 'activesupport', '~>4.2', '>=4.2.5.1'
+
+#Gets javascript stuff working
+gem 'coffee-script-source', '~>1.8.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
