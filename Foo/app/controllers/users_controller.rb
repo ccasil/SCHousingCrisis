@@ -7,6 +7,12 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
         @users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
+        @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+          marker.lat user.latitude
+          marker.lng user.longitude
+          marker.infowindow user.street
+        end
+
       end
 
 
