@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_account!, except: [:index, :show]
-  load_and_authorize_resource
+
 
   # GET /users
   # GET /users.json
   def index
         @users = User.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
       end
+
 
 
       def upvote
@@ -31,8 +32,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    authorize! :new, @account
-    redirect_to user_path 
   end
 
   # GET /users/1/edit

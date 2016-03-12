@@ -1,11 +1,6 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(account)
-    account ||= Account.new #guest user
-        can :read, :all
-    end
-
 
 
 

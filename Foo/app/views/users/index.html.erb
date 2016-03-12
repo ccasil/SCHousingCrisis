@@ -75,10 +75,6 @@
 
 <script type="text/javascript">
 var map;
-  map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: {lat: 36.9760799, lng: -121.9535941}
-  });
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
