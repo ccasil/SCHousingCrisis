@@ -55,5 +55,7 @@
   <%= @listing.description %>
 </p>
 
+  <%= image_tag @listing.photo.url %>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

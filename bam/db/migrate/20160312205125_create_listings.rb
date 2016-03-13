@@ -12,6 +12,7 @@ class CreateListings < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.text :description
+      t.attachment :photo
 
       t.timestamps null: false
     end
