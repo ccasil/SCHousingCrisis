@@ -4,13 +4,18 @@
 
 <p id="notice"><%= notice %></p>
 
-
-<%= form_tag listings_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= button_tag "Search",:type => 'search', :name => nil %>
-  </p>
-   
+<%= search_form_for @search do |f| %>
+  <div class= "field">
+    <%= f.label :name_cont, "Name contains" %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="field">
+    <%= f.label :priceperm_gteq, "Price between" %>
+    <%= f.text_field :priceperm_gteq %>
+    <%= f.label :priceperm_lteq, "and" %>
+    <%= f.text_field :priceperm_lteq %>    
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
 
 
@@ -55,7 +60,6 @@
   </tbody>
 </table>
 
-<br><%= will_paginate @user %><br>
 
 <%= link_to 'New Listing', new_listing_path %>
 

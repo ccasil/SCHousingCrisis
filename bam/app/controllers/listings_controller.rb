@@ -4,7 +4,8 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-        @listings = Listing.search(params[:search]).paginate(:page => params[:page], :per_page => 3)
+        @search = Listing.ransack(params[:q])
+        @listings = @search.result
         @hash = Gmaps4rails.build_markers(@listings) do |listing, marker|
           marker.lat listing.latitude
           marker.lng listing.longitude

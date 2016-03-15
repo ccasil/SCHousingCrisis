@@ -28,6 +28,7 @@ gem 'devise'
 #attr_accessible in the model
 gem 'protected_attributes'
 
+gem 'ransack'
 
 #Pagination
 gem 'tzinfo-data'
