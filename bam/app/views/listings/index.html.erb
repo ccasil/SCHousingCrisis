@@ -5,17 +5,18 @@
 <p id="notice"><%= notice %></p>
 
 <%= search_form_for @search do |f| %>
-  <div class= "field">
-    <%= f.label :name_cont, "Name contains" %>
-    <%= f.text_field :name_cont %>
-  </div>
+   <%= f.condition_fields do |c| %>
   <div class="field">
-    <%= f.label :priceperm_gteq, "Price between" %>
-    <%= f.text_field :priceperm_gteq %>
-    <%= f.label :priceperm_lteq, "and" %>
-    <%= f.text_field :priceperm_lteq %>    
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
+    <%= c.attribute_fields do |a| %>
+      <%= a.attribute_select %>
+    <% end %>
+    <%= c.predicate_select %>
+    <%= c.value_fields do |v| %>
+      <%= v.text_field :value %>
+    <% end %>
+    <%= f.submit "Search" %>
+    </div>
+    <%end %>
 <% end %>
 
 
