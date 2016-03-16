@@ -1,0 +1,62 @@
+<div id="form">
+<fieldset>
+  <div style="padding-left: 2em; padding-right:2em;"><h1>Showing the listing at "<%= @listing.street %>"</h1></div>
+<p id="notice"><%= notice %></p>
+
+<div class="form-group">
+  <div class="col-md-5", style="padding-left:2em;  padding-right:2em;">
+      <p>
+        <strong>Name:</strong>
+        <%= @listing.name %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= @listing.phone %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @listing.email %>
+      </p>
+
+      <p>
+        <strong>Street:</strong>
+        <%= @listing.street %>
+      </p>
+
+      <p>
+        <strong>City:</strong>
+        <%= @listing.city %>
+      </p>
+
+      <p>
+        <strong>State:</strong>
+        <%= @listing.state %>
+      </p>
+
+      <p>
+        <strong>Zip:</strong>
+        <%= @listing.zip %>
+      </p>
+
+      <p>
+        <strong>Priceperm:</strong>
+        <%= @listing.priceperm %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @listing.description %>
+      </p>
+    </div>
+  </div>
+
+  <div class="col-md-5", style="padding-left: 2em;">
+<%= link_to like_listing_path(@listing), method: :put, class: "button-sm button_highlight" do %>
+  <%= @listing.get_upvotes.size %>
+<% end %>
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
+</fieldset>
+</div>

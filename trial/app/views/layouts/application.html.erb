@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bam</title>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<div class="header_inner">
+				<%= link_to image_tag('logo.svg'), root_path, :id => 'logo' %>
+			  <nav>
+			  	  <% if can? :create, Listing %>
+				    <%= link_to 'Post a Listing', new_listing_path %>
+				  <% end %>
+			    <% if user_signed_in? %>
+					<%= link_to 'Profile', edit_user_registration_path %>
+			    	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+			    <% else %>
+					<%= link_to "Login", new_user_session_path %>
+					<%= link_to "Register", new_user_registration_path %>
+				<% end %>
+			</nav>
+		</div>	
+	</header>
+	<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, id: "flash_#{name}" %>
+	<% end %>
+	<%= yield %>
+</body>
+</html>
