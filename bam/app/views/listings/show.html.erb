@@ -9,6 +9,7 @@
         <%= @listing.name %>
       </p>
 
+<<<<<<< HEAD
       <p>
         <strong>Phone:</strong>
         <%= @listing.phone %>
@@ -64,6 +65,10 @@
   </div>
 </fieldset>
   <div class="col-md-5", style="padding-left: 3em;">
+=======
+  <%= image_tag @listing.photo.url %>
+
+>>>>>>> 0cc42df4763aac28a9a362319b90e55305172f77
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
   </div>
