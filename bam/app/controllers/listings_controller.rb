@@ -1,6 +1,13 @@
 class ListingsController < ApplicationController
+  
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
+   include CanCan::ControllerAdditions
+
   # GET /listings
   # GET /listings.json
   def index
@@ -10,7 +17,6 @@ class ListingsController < ApplicationController
           marker.lng listing.longitude
           marker.infowindow listing.street
         end
-
   end
 
   # GET /listings/1
@@ -75,6 +81,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:name, :phone, :email, :street, :city, :state, :zip, :priceperm, :latitude, :longitude, :description)
+      params.require(:listing).permit(:name, :phone, :email, :street, :city, :state, :zip, :priceperm, :latitude, :longitude, :description, :photo)
     end
 end

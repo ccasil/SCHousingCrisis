@@ -1,59 +1,69 @@
+<fieldset>
+  <legend style="padding-left: 2em;">Showing the listing at "<%= @listing.street %> " </legend>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
+<div class="form-group">
+  <div class="col-md-5", style="padding-left:3em;">
+      <p>
+        <strong>Name:</strong>
+        <%= @listing.name %>
+      </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @listing.phone %>
-</p>
+      <p>
+        <strong>Phone:</strong>
+        <%= @listing.phone %>
+      </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @listing.email %>
-</p>
+      <p>
+        <strong>Email:</strong>
+        <%= @listing.email %>
+      </p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @listing.street %>
-</p>
+      <p>
+        <strong>Street:</strong>
+        <%= @listing.street %>
+      </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @listing.city %>
-</p>
+      <p>
+        <strong>City:</strong>
+        <%= @listing.city %>
+      </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @listing.state %>
-</p>
+      <p>
+        <strong>State:</strong>
+        <%= @listing.state %>
+      </p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @listing.zip %>
-</p>
+      <p>
+        <strong>Zip:</strong>
+        <%= @listing.zip %>
+      </p>
 
-<p>
-  <strong>Priceperm:</strong>
-  <%= @listing.priceperm %>
-</p>
+      <p>
+        <strong>Priceperm:</strong>
+        <%= @listing.priceperm %>
+      </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @listing.latitude %>
-</p>
+      <p>
+        <strong>Latitude:</strong>
+        <%= @listing.latitude %>
+      </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @listing.longitude %>
-</p>
+      <p>
+        <strong>Longitude:</strong>
+        <%= @listing.longitude %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @listing.description %>
+      </p>
 
+
+    </div>
+  </div>
+</fieldset>
+  <div class="col-md-5", style="padding-left: 3em;">
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
+  </div>

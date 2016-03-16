@@ -2,27 +2,37 @@
 <html>
 <head>
   <title>Bam</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+ 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="container">
-		<div id="user_nav">
-			<% if user_signed_in? %>
-				Logged in as <strong><%= current_user.email %></strong>.
-				<%= link_to 'Edit profile', edit_user_registration_path %>
-				<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-			<% else %>
-				<%= link_to 'Home', listings_path %>
-				<%= link_to "Sign up", new_user_registration_path %>
-				<%= link_to "Login", new_user_session_path %>
-			<% end %>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<%= link_to 'Home', root_path, :class => 'navbar-brand' %>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      			<ul class="nav navbar-nav">
+			    	<% if user_signed_in? %>
+						<li class="<%= 'active' if current_page?(edit_user_registration_path) %>">
+							<%= link_to 'Edit profile', edit_user_registration_path %></li>
+			        	<li class="<%= 'active' if current_page?(new_user_registration_path) %>">
+			        		<%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			      	<% else %>
+					    <li class="<%= 'active' if current_page?(new_user_session_path) %>">
+					    	<%= link_to "Login", new_user_session_path %></li>
+					    <li class="<%= 'active' if current_page?(new_user_registration_path) %>">
+					    	<%= link_to "Register", new_user_registration_path %></li>
+			      	<% end %>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-			<% flash.each do |name, msg| %>
-				<%= content_tag :div, msg, id: "flash_#{name}" %>
-			<% end %>
-
+				<% flash.each do |name, msg| %>
+					<%= content_tag :div, msg, id: "flash_#{name}" %>
+				<% end %>
 <%= yield %>
 
 </body>
